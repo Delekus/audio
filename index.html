@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Audio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Kelly+Slab&display=swap"
+		rel="stylesheet">
+	<style>
+		*,
+		*:before,
+		*:after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+
+			font-family: "Oswald", sans-serif;
+			font-size: 16px;
+			color: #fff;
+			background-image: url(https://delekus.github.io/audio/img/background.jpg);
+			background-repeat: repeat;
+			width: 100%;
+		}
+
+		.wrapper {
+			min-height: calc(100vh - 90px);
+		}
+
+		.content {
+			width: 100%;
+			max-width: 1368px;
+			margin: 0 auto;
+			padding: 0 5px;
+		}
+
+		.title {
+			margin: 40px 0;
+			border: 1px #fff solid;
+			border-radius: 10px;
+			padding: 5px;
+			text-align: center;
+			position: relative;
+		}
+
+		.title span {
+			font-family: "Kelly Slab", sans-serif;
+			color: #fff;
+			font-size: 3rem;
+		}
+
+		.title span:hover {
+			color: #a613c9;
+		}
+
+		.title__logo::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+			left: 10px;
+			background-image: url(https://delekus.github.io/audio/img/umbrella-logo.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 55px;
+			height: 55px;
+		}
+
+		.title__logo::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+			right: 10px;
+			background-image: url(https://delekus.github.io/audio/img/umbrella-logo.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 55px;
+			height: 55px;
+		}
+
+		.text {
+			border: 1px #fff solid;
+			margin-bottom: 20px;
+			padding: 5px;
+		}
+
+		.text p {
+			text-align: justify;
+		}
+
+		.text h2 {
+			text-align: center;
+		}
+
+		.text p span {
+			font-weight: bold;
+		}
+
+		.box-album {}
+
+		.album {
+			position: relative;
+			width: 33.333%;
+			max-width: 456px;
+			min-width: 300px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			border: 4px rgba(186, 193, 199, 0.6) solid;
+			text-align: center;
+			float: left;
+		}
+
+
+		.album::before {
+			content: "";
+			padding-top: 100%;
+			float: left;
+		}
+
+		.album::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		.icon-1 {
+			background-image: url(https://delekus.github.io/audio/img/1.jpg);
+		}
+
+		.icon-2 {
+			background-image: url(https://delekus.github.io/audio/img/2.jpg);
+		}
+
+		.icon-3 {
+			background-image: url(https://delekus.github.io/audio/img/3.jpg);
+		}
+
+		.icon-4 {
+			background-image: url(https://delekus.github.io/audio/img/4.jpg);
+		}
+
+		.icon-5 {
+			background-image: url(https://delekus.github.io/audio/img/5.jpg);
+		}
+
+		.icon-6 {
+			background-image: url(https://delekus.github.io/audio/img/6.png);
+		}
+
+		.album__name {
+			margin-top: 5%;
+		}
+
+		.album__name span {
+			font-size: 2rem;
+			font-weight: bold;
+			letter-spacing: 3px;
+			background-color: rgba(186, 193, 199, 0.6);
+			border-radius: 10px;
+			color: #000;
+		}
+
+		.album__audio {
+			position: absolute;
+			width: 100%;
+			bottom: 5px;
+		}
+
+		footer {
+			margin-top: 20px;
+			height: 50px;
+			border-top: 1px solid #fff;
+			background-color: rgba(186, 193, 199, 0.6);
+		}
+
+		footer span {
+			font-size: 1rem;
+			line-height: 50px;
+		}
+
+		.clearfix {
+			zoom: 1;
+		}
+
+		.clearfix:before,
+		.clearfix:after {
+			content: "";
+			display: table;
+		}
+
+		.clearfix:after {
+			clear: both;
+		}
+
+		@media only screen and (max-width : 920px) {
+
+			/*        Ширина экрана 920px и ниже */
+			html,
+			body {
+				font-size: 13px;
+			}
+
+			.content {
+				max-width: 840px;
+			}
+
+
+			.album {
+				width: 50%;
+				max-width: 420px;
+			}
+		}
+
+		@media only screen and (max-width : 650px) {
+
+			/*        Ширина экрана 650px и ниже */
+			html,
+			body {
+				font-size: 10px;
+			}
+
+			.content {
+				max-width: 640px;
+			}
+
+			.title__logo::before {
+				content: "";
+				width: 35px;
+				height: 35px;
+			}
+
+			.title__logo::after {
+				content: "";
+				width: 35px;
+				height: 35px;
+			}
+
+			.text {
+				font-size: 1.2rem;
+			}
+		}
+
+		@media only screen and (max-width : 625px) {
+
+			/*        Ширина экрана 625px и ниже */
+			.content {
+				max-width: 600px;
+			}
+
+			.album {
+				width: 100%;
+				max-width: 600px;
+			}
+		}
+
+		@media only screen and (max-width : 420px) {
+
+			/*        Ширина экрана 420px и ниже */
+			.title__logo::before {
+				content: "";
+				display: none;
+			}
+
+			.title__logo::after {
+				content: "";
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="content">
+				<div class="title title__logo">
+					<span>Bring Me The Horizon</span>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="content">
+				<div class="text">
+					<p>
+						<span>Bring Me the Horizon</span> — британская рок-группа из Шеффилда, Йоркшира,
+						основанная в 2004 году. В настоящее время состоит из вокалиста Оливера Сайкса, гитариста Ли Малии, басиста
+						Мэтта Кина, барабанщика Мэтта Николлса и клавишника Джордана Фиша.
+					</p>
+					<p>
+						На данный момент группа имеет шесть выпущенных полноформатных альбомов и четыре мини-альбома. На протяжении
+						карьеры участники старались экспериментировать со звучанием: ранние релизы имели более тяжёлый звук и были
+						классифицированы как дэткор и металкор. Позднее в звучание группы добавились элементы мелодичного хардкора,
+						альтернативного, электронного и пост-рока.
+					</p>
+					<h2>Становление</h2>
+					<p>Группа была создана в 2004 году участниками распавшихся групп из их района: они получили своё название,
+						взяв за основу фразу из фильма Пираты Карибского моря, которую произнёс капитан Джек Воробей: «Now bring me
+						that horizon». В сентябре 2004 года вышел дебютный релиз группы — мини-альбом «This Is What the Edge of
+						Your Seat Was Made For». Причём, для этого пришлось создать собственный лейбл — Thirty Days of Night
+						Records, так как ни один из существующих не захотел работать с начинающей группой. В английском чарте
+						альбом занял 41 место.</p>
+
+					<p>Несколько месяцев команда удачно гастролировала, играя у других групп на разогреве. В этот период они
+						выступали с такими группами, как Lostprophets, The Blackout, Killswitch Engage и The Haunted. Но в
+						2006 году Bring Me the Horizon получили музыкальную премию Kerrang! Awards, как лучшие новички
+						Великобритании. В этом же году 30 октября группа выпустила первый полноценный альбом под названием
+						«Count Your Blessings».</p>
+
+					<p>В марте и апреле 2007 года BMTH совершили тур по Великобритании с группой I Killed the Prom Queen, также
+						они
+						играли на Download Festival 2007 с Iron Maiden, Slayer и другими. В ноябре 2007 года группа была в
+						Австралии на Gigantour, сыграв три раза. Они вернулись в Австралию в мае-июне 2008 года, появившись на
+						финальном туре I Killed the Prom Queen.</p>
+				</div>
+
+
+				<div class="box-album clearfix">
+
+					<!--1-->
+					<div class="album icon-1">
+						<div class="album__name">
+							<span>That's the Spirit</span>
+						</div>
+						<div class="album__audio">
+							<audio src="audio/Follow-You.mp3" controls preload="auto"></audio>
+						</div>
+					</div>
+					<!--2-->
+					<div class="album icon-2">
+						<div class="album__name">
+							<span>Sempiternal</span>
+						</div>
+						<div class="album__audio">
+							<audio src="audio/Bring Me The Horizon Can You Feel My Heart.mp3" controls preload="auto"></audio>
+						</div>
+					</div>
+					<!--3-->
+					<div class="album icon-3">
+						<div class="album__name">
+							<span>Post Human: NeX GEn</span>
+						</div>
+						<div class="album__audio">
+							<audio src="audio/Bring Me The Horizon - LosT.mp3" controls preload="auto"></audio>
+						</div>
+					</div>
+
+					<!--4-->
+					<div class="album icon-4">
+						<div class="album__name">
+							<span>There Is a Hell, Believe Me</span>
+						</div>
+						<div class="album__audio">
+							<audio src="audio/Bring Me The Horizon - Diamonds Aren't Forever.mp3" controls preload="auto"></audio>
+						</div>
+					</div>
+					<!--5-->
+					<div class="album icon-5">
+						<div class="album__name">
+							<span>Amo</span>
+						</div>
+						<div class="album__audio">
+							<audio src="audio/Bring Me The Horizon I Apologise If You Feel Something.mp3" controls
+								preload="auto"></audio>
+						</div>
+					</div>
+					<!--6-->
+					<div class="album icon-6">
+						<div class="album__name">
+							<span>Live at the Royal Albert Hall</span>
+						</div>
+						<div class="album__audio">
+							<audio src="audio/Bring Me The Horizon – Sleepwalking.mp3" controls preload="auto"></audio>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	<footer>
+		<div class="content">
+			<div>
+				<span> &#169; Все права защищены</span>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>
